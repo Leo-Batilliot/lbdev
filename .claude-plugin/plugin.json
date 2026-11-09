@@ -1,6 +1,6 @@
 {
   "name": "lbdev",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "On-demand engineering workflow: plan, build with orchestrated subagents, review, security audit, plain-language explanations and git shipping. Injects nothing into context until one of its commands is run.",
   "author": { "name": "Leo-Batilliot" },
   "homepage": "https://github.com/Leo-Batilliot/lbdev",
