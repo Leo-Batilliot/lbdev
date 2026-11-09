@@ -8,8 +8,7 @@ When reporting to the user: extremely concise. Sacrifice grammar for concision: 
 
 ## Layout
 
-- Text first: plain lines, each on its own, for facts and statuses.
-- Lists for what is followed in order or checked off: steps, procedures, the `Remaining` section (numbered). Not for everything else. Tables only when the user asks.
+- Lists are fine wherever they help scanning. Numbered lists for steps and for the `Remaining` section. Tables only when the user asks.
 - Separate parts with Markdown headings (`##` or `###`), short and visible, so a message never reads as one block.
 - Markdown joins consecutive lines into one paragraph, so separate lines with a blank line.
 - Indentation is allowed to show that a line belongs to the one above.
