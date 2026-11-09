@@ -1,0 +1,11 @@
+{
+  "name": "lbdev-tools",
+  "owner": { "name": "Leo-Batilliot" },
+  "plugins": [
+    {
+      "name": "lbdev",
+      "source": "./",
+      "description": "On-demand engineering workflow: init, plan, build with orchestrated subagents, review, security, explanations and git shipping."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "lbdev",
+  "version": "0.1.0",
+  "description": "On-demand engineering workflow: plan, build with orchestrated subagents, review, security audit, plain-language explanations and git shipping. Injects nothing into context until one of its commands is run.",
+  "author": { "name": "Leo-Batilliot" },
+  "homepage": "https://github.com/Leo-Batilliot/Agentic_tools/tree/main/plugin",
+  "repository": "https://github.com/Leo-Batilliot/Agentic_tools",
+  "keywords": ["workflow", "orchestration", "subagents", "code-review", "security", "planning"],
+  "userConfig": {
+    "git_mode": {
+      "type": "string",
+      "title": "Git mode",
+      "description": "pr: branch, commit, push and open a pull request (never merge). push: branch, commit and push, no PR. commit: local commits only. none: no git writes, print the commands instead.",
+      "options": ["pr", "push", "commit", "none"],
+      "default": "pr"
+    },
+    "autonomy": {
+      "type": "string",
+      "title": "Planning autonomy",
+      "description": "ask: /lbdev:plan asks one questionnaire and one validation box. auto: it asks only blocking questions, skips the validation (running /lbdev:build approves the plan) and integrates kits the auditor accepted without security findings.",
+      "options": ["ask", "auto"],
+      "default": "ask"
+    },
+    "plans_dir": {
+      "type": "string",
+      "title": "Plans directory",
+      "description": "Working files (plans, ledgers, boards, saved explanations), relative to the project root. Kept out of git: lasting content is promoted to ADRs, the roadmap and the pull request.",
+      "default": ".lbdev/plans"
+    },
+    "max_fix_rounds": {
+      "type": "number",
+      "title": "Max fix rounds",
+      "description": "How many review-then-fix rounds a task gets before it is parked and reported.",
+      "default": 2,
+      "min": 0,
+      "max": 5
+    },
+    "max_kits_per_role": {
+      "type": "number",
+      "title": "Max kits per role",
+      "description": "How many kits (on-demand know-how files) one role may use.",
+      "default": 5,
+      "min": 1,
+      "max": 20
+    },
+    "source_dir": {
+      "type": "directory",
+      "title": "Plugin source (optional)",
+      "description": "Local checkout of this plugin's source, so /lbdev:improve can fix the plugin from its feedback log. Leave empty when the plugin is loaded with --plugin-dir from its source."
+    }
+  }
+}
