@@ -51,7 +51,7 @@ The project's own instructions (CLAUDE.md, AGENTS.md, CONTRIBUTING, linter confi
 ## Layout
 
 ```
-plugin/
+lbdev/
   .claude-plugin/plugin.json   manifest and user configuration
   skills/<command>/SKILL.md    the ten commands
   roles/                       explorer, architect, implementer, verifier, reviewer, security-auditor, validator, teacher, scout, skill-auditor
@@ -67,10 +67,19 @@ plugin/
 ## Try it locally
 
 ```bash
-claude --plugin-dir ./plugin
+claude --plugin-dir /path/to/lbdev
 ```
 
-Then run `/lbdev:plan` in a project. `claude plugin validate ./plugin` checks the manifest and the skills. `bash plugin/tests/run.sh` tests the scripts.
+Then run `/lbdev:init` in a project. From the plugin folder, `claude plugin validate .` checks the manifest, the marketplace and the skills, and `bash tests/run.sh` tests the scripts.
+
+## Install
+
+```bash
+claude plugin marketplace add Leo-Batilliot/lbdev
+claude plugin install lbdev@lbdev-tools
+```
+
+Update with `claude plugin update lbdev@lbdev-tools`.
 
 ## Requirements and limits
 
